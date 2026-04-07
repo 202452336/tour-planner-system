@@ -12,7 +12,7 @@ describe('Authentication API - Black Box Tests', () => {
                 .post('/api/auth/register')
                 .send({
                     name: 'John Doe',
-                    email: 'john@example.com',
+                    email: `john${Date.now()}@example.com`,
                     password: 'Password123',
                     phone: '1234567890'
                 });
@@ -43,11 +43,12 @@ describe('Authentication API - Black Box Tests', () => {
         });
 
         test('Should fail registration with duplicate email', async () => {
+            const uniqueEmail = `duplicate${Date.now()}@example.com`;
             await request(app)
                 .post('/api/auth/register')
                 .send({
                     name: 'Test User',
-                    email: 'duplicate@example.com',
+                    email: uniqueEmail,
                     password: 'Password123'
                 });
 
@@ -55,7 +56,7 @@ describe('Authentication API - Black Box Tests', () => {
                 .post('/api/auth/register')
                 .send({
                     name: 'Another User',
-                    email: 'duplicate@example.com',
+                    email: uniqueEmail,
                     password: 'Password456'
                 });
             expect(res.status).toBe(400);
@@ -67,7 +68,7 @@ describe('Authentication API - Black Box Tests', () => {
         let testUserEmail, testUserPassword;
 
         beforeAll(async () => {
-            testUserEmail = 'logintest@example.com';
+            testUserEmail = `logintest${Date.now()}@example.com`;
             testUserPassword = 'LoginTest123';
             
             await request(app)

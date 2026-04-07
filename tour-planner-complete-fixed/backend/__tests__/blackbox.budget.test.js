@@ -5,8 +5,37 @@ const app = require('../server');
 describe('Budget API - Black Box Tests', () => {
     let authToken;
     let tourId;
+    let adminToken;
 
     beforeAll(async () => {
+        // Register an admin to create destination
+        await request(app)
+            .post('/api/auth/register')
+            .send({
+                name: 'Admin User',
+                email: 'adminbudget@example.com',
+                password: 'AdminPass123',
+                role: 'admin'
+            });
+
+        const adminLogin = await request(app)
+            .post('/api/auth/login')
+            .send({
+                email: 'adminbudget@example.com',
+                password: 'AdminPass123'
+            });
+        adminToken = adminLogin.body.token;
+
+        // Create a destination
+        await request(app)
+            .post('/api/destinations')
+            .set('Authorization', `Bearer ${adminToken}`)
+            .send({
+                name: 'Test Destination',
+                location: 'Test Location',
+                description: 'A test destination'
+            });
+
         // Register and login a user
         const registerRes = await request(app)
             .post('/api/auth/register')
@@ -93,7 +122,7 @@ describe('Budget API - Black Box Tests', () => {
 
         test('Should fail without authentication', async () => {
             const res = await request(app)
-                .get('/api/budget/1');
+                .get('/api/budget/tour/1');
             expect(res.status).toBe(401);
         });
     });
