@@ -171,7 +171,6 @@ npm run test:coverage       # Generate coverage report
 ```
 
 Coverage report is generated at `backend/coverage/lcov-report/index.html`
-<img width="1578" height="864" alt="image" src="https://github.com/user-attachments/assets/57bb9657-bdc7-4399-bf32-51d4556514d9" />
 
 ---
 
