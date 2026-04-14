@@ -56,16 +56,6 @@ A full-stack web application to plan, manage, and track personalized tours — w
 
 ---
 
-###.env example
-PORT=5000
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=your_password
-DB_NAME=tour_planner
-JWT_SECRET=your_secret
-
----
-
 ## 📁 Project Structure
 
 ```
