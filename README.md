@@ -1,5 +1,14 @@
 # 🗺️ Tour Planner
 
+---
+
+## 🌟 Highlights
+
+- Full-stack travel planning system
+- Built using React + Node.js + MySQL
+- Handles user authentication, itinerary, budgeting
+- Modular backend architecture
+
 A full-stack web application to plan, manage, and track personalized tours — with itinerary building, hotel and transport discovery, destination browsing, and budget tracking.
 
 ---
@@ -44,6 +53,15 @@ A full-stack web application to plan, manage, and track personalized tours — w
 | Blackbox tests   | Endpoint-level API tests |
 | Whitebox tests   | Controller and logic unit tests |
 | Istanbul         | Code coverage reports |
+
+---
+###.env example
+PORT=5000
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_password
+DB_NAME=tour_planner
+JWT_SECRET=your_secret
 
 ---
 
@@ -153,6 +171,7 @@ npm run test:coverage       # Generate coverage report
 ```
 
 Coverage report is generated at `backend/coverage/lcov-report/index.html`
+<img width="1578" height="864" alt="image" src="https://github.com/user-attachments/assets/57bb9657-bdc7-4399-bf32-51d4556514d9" />
 
 ---
 
@@ -172,3 +191,14 @@ Built by [Nikitha Thuppathi] — [thuppathinikitha07@gmail.com]
 ## 📄 License
 
 MIT
+
+<img width="1578" height="864" alt="image" src="https://github.com/user-attachments/assets/69634695-1761-489d-9bfa-4c0938cde70f" />
+<img width="1381" height="900" alt="image" src="https://github.com/user-attachments/assets/2a33079d-4be5-48bd-a3f1-60c30cbd9e0a" />
+<img width="1072" height="847" alt="image" src="https://github.com/user-attachments/assets/671dcff4-e717-4f4e-8a38-5079a0f73294" />
+<img width="1074" height="718" alt="image" src="https://github.com/user-attachments/assets/62533b73-1078-47af-a5c1-991d79d097b9" />
+<img width="1095" height="910" alt="image" src="https://github.com/user-attachments/assets/43c6ee51-03e2-437d-ae32-da5da53c7914" />
+<img width="1057" height="903" alt="image" src="https://github.com/user-attachments/assets/f7efefe5-1093-4d57-93f6-445ab83f3eb0" />
+<img width="1075" height="894" alt="image" src="https://github.com/user-attachments/assets/e35660b9-a553-4dfc-9159-bcd7552973a0" />
+
+
+
